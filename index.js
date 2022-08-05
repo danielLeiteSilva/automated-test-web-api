@@ -7,9 +7,7 @@ const port = process.env.PORT || 8080
 app.use(express.json())
 
 app.post("/api/v1/test", async (req, res) => {
-
     
-
     try {
         await start(req.body)
     } catch (error) {
