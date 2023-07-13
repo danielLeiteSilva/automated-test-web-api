@@ -3,12 +3,6 @@ const puppeteer = require('puppeteer')
 module.exports = async function start(request) {
 
     const browser = await puppeteer.launch({
-        ignoreDefaultArgs: ['--disable-extensions'],
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disabled-setupid-sandbox'
-        ],
         headless: false
     });
 
