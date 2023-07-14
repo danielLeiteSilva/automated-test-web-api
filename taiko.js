@@ -8,7 +8,6 @@ const {
     screenshot,
     reload,
     setConfig,
-    highlight,
     into,
     $
 } = require('taiko');
@@ -76,7 +75,7 @@ function getParams(params) {
 }
 
 async function validSelector(value, callback){
-    if(value.search(":")){
+    if(value.includes(":")){
         let arraySelector = value.split(":")
         console.log(arraySelector[0].toString())
         return await callback(arraySelector[1], into($(arraySelector[0].toString())));
@@ -86,6 +85,7 @@ async function validSelector(value, callback){
 }
 
 async function start(key, value, id) {
+    console.log(key)
     const tags = {
         "input": async () => {
             log.info("Escrevendo no input...")

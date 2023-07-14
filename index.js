@@ -58,7 +58,7 @@ app.get("/api/v1/state/:id", (req, res) => {
 app.get("/api/v1/download/:id", (req, res) => {
     const file = path.join(__dirname, ".", `${req.params.id}.pdf`)
     if (fs.existsSync(file)) {
-        res.status(204).download(file)
+        res.status(200).download(file)
     } else {
         res.status(404).json({
             status_code: 404, id: req.params.id,
